@@ -65,6 +65,21 @@ local effects = {
     },
   },
 
+  ["london_thermobaric_gflash"] = {
+    groundflash = {
+      circlealpha        = 0.5,
+      circlegrowth       = 50,
+      flashalpha         = 0,
+      flashsize          = 40,
+      ttl                = 200,
+      color = {
+        [1]  = 1,
+        [2]  = 0.69999998807907,
+        [3]  = 0.40000000596046,
+      },
+    },
+  },
+
   ["london_small"] = {
     dustring = {
       air                = true,
@@ -172,6 +187,51 @@ local effects = {
         alpha              = 0.8,
         color              = [[0.8,0.8,0.6]],
         expansionspeed     = 12,
+        ttl                = 100,
+      },
+    },
+  },
+
+  ["london_thermobaric"] = {
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 0,
+      flashalpha         = 1,
+      flashsize          = 1000,
+      ttl                = 1200,
+      color = {
+        [1]  = 1,
+        [2]  = 0.69999998807907,
+        [3]  = 0.20000000298023,
+      },
+    },
+    --pikez = {
+    --  air                = true,
+    --  class              = [[explspike]],
+    --  count              = 0,
+    --  ground             = true,
+    --  water              = true,
+    --  underwater         = true,
+    --  properties = {
+    --    alpha              = 0.8,
+    --    alphadecay         = 0.03,
+    --    color              = [[1.0,1.0,0.8]],
+    --    dir                = [[-15 r30,-15 r30,-15 r30]],
+    --    length             = 4000,
+    --    width              = 15,
+    --  },
+    --},
+    sphere = {
+      air                = true,
+      class              = [[CSpherePartSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      underwater         = true,
+      properties = {
+        alpha              = 0.8,
+        color              = [[0.8,0.8,0.6]],
+        expansionspeed     = 40,
         ttl                = 100,
       },
     },
@@ -424,6 +484,32 @@ effects.london_flat = {
 		},
 	},
 	-- END ZOE: Delay 0
+}
+
+effects.london_thermobaric = {
+	sphere = {
+		air                = true,
+		class              = [[CExpGenSpawner]],
+		count              = 1,
+		ground             = true,
+		water              = true,
+		underwater         = true,
+		properties = {
+			explosiongenerator = [[custom:LONDON_THERMOBARIC]],
+			pos                = [[0, 5, 0]],
+		},
+	},
+  gflash = {
+		air                = true,
+		class              = [[CExpGenSpawner]],
+		count              = 1,
+		ground             = true,
+		water              = true,
+		properties = {
+			explosiongenerator = [[custom:LONDON_GFLASH]],
+			pos                = [[0, 0, 0]],
+		},
+	},
 }
 
 return effects

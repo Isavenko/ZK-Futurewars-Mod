@@ -17,6 +17,7 @@ return {
 			"singularity",
 			"missilenuke",
 			"missilekinetic",
+			"missilethermobaric",
 		},
 		buildPic                      = "staticmissilesilo.png",
 		canFight                      = false,
